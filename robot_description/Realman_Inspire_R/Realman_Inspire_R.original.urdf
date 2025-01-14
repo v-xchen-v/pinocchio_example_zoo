@@ -1,0 +1,691 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="Realman_Inspire_R_mimic">
+  <joint name="R_index_intermediate_joint" type="revolute">
+    <origin xyz="-0.001 0.032026 0.0026138" rpy="0. 0. 0."/>
+    <parent link="R_index_proximal"/>
+    <child link="R_index_intermediate"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_index_proximal_joint" type="revolute">
+    <origin xyz="-0.0019977 -0.0322074 0.1386 " rpy="1.5707964 0.0348927 -1.6415869"/>
+    <parent link="R_hand_base_link"/>
+    <child link="R_index_proximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="inf" velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_middle_intermediate_joint" type="revolute">
+    <origin xyz="-0.001 0.032041 0.0024229" rpy="0. 0. 0."/>
+    <parent link="R_middle_proximal"/>
+    <child link="R_middle_intermediate"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_middle_proximal_joint" type="revolute">
+    <origin xyz="-0.0006314 -0.0129378 0.13917 " rpy="1.5707964 -0.0000072 -1.6415869"/>
+    <parent link="R_hand_base_link"/>
+    <child link="R_middle_proximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_pinky_intermediate_joint" type="revolute">
+    <origin xyz="-0.001 0.032041 0.0024229" rpy="0. 0. 0."/>
+    <parent link="R_pinky_proximal"/>
+    <child link="R_pinky_intermediate"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_pinky_proximal_joint" type="revolute">
+    <origin xyz="0.0020874 0.025404 0.13778 " rpy="1.5707964 -0.1046926 -1.6415869"/>
+    <parent link="R_hand_base_link"/>
+    <child link="R_pinky_proximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_ring_intermediate_joint" type="revolute">
+    <origin xyz="-0.001 0.032041 0.0024229" rpy="0. 0. 0."/>
+    <parent link="R_ring_proximal"/>
+    <child link="R_ring_intermediate"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_ring_proximal_joint" type="revolute">
+    <origin xyz="0.0007293 0.0062512 0.13898 " rpy="1.5707964 -0.0523926 -1.6415869"/>
+    <parent link="R_hand_base_link"/>
+    <child link="R_ring_proximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="0." upper="1.7" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_thumb_distal_joint" type="revolute">
+    <origin xyz="-0.0012 0.010156 -0.020248" rpy="0. 0. 0."/>
+    <parent link="R_thumb_intermediate"/>
+    <child link="R_thumb_distal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="1." velocity="0.5"/>
+  </joint>
+  <joint name="R_thumb_intermediate_joint" type="revolute">
+    <origin xyz="-0.0008 0.034553 -0.04407 " rpy="0. 0. 0."/>
+    <parent link="R_thumb_proximal"/>
+    <child link="R_thumb_intermediate"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1415927" upper="3.1415927" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_thumb_proximal_pitch_joint" type="revolute">
+    <origin xyz="0.00925 0.010892 -0.0088099" rpy="0.0000011 -0.2828926 1.5707926"/>
+    <parent link="R_thumb_proximal_base"/>
+    <child link="R_thumb_proximal"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.1" upper="0.6" effort="1." velocity="17453.2925199"/>
+  </joint>
+  <joint name="R_thumb_proximal_yaw_joint" type="revolute">
+    <origin xyz="-0.018364 -0.0191992 0.07117 " rpy="1.5940461 1.5707927 3.0940557"/>
+    <parent link="R_hand_base_link"/>
+    <child link="R_thumb_proximal_base"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-0.1" upper="1.2999998" effort="1." velocity="0.5"/>
+  </joint>
+  <joint name="hand_joint" type="fixed">
+    <origin xyz="-0. 0. 0." rpy="0. 1.5707963 0. "/>
+    <parent link="Link7"/>
+    <child link="R_flange_link"/>
+  </joint>
+  <joint name="hand_root_joint" type="fixed">
+    <origin xyz="0. 0. -0." rpy="0. 0. 0."/>
+    <parent link="R_flange_link"/>
+    <child link="R_hand_base_link"/>
+  </joint>
+  <joint name="joint1" type="revolute">
+    <origin xyz="0. 0. 0.2405" rpy="3.1415927 -1.5707928 1.5707964"/>
+    <parent link="base_link"/>
+    <child link="Link1"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1070001" upper="3.1070001" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint2" type="revolute">
+    <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707928 0. "/>
+    <parent link="Link1"/>
+    <child link="Link2"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.2689999" upper="2.2689999" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint3" type="revolute">
+    <origin xyz="0. 0. 0.256" rpy="3.1415927 -1.5707928 0. "/>
+    <parent link="Link2"/>
+    <child link="Link3"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1070001" upper="3.1070001" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint4" type="revolute">
+    <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707928 0. "/>
+    <parent link="Link3"/>
+    <child link="Link4"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.3559998" upper="2.3559998" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint5" type="revolute">
+    <origin xyz="0. 0. 0.21" rpy="3.1415927 -1.5707928 0. "/>
+    <parent link="Link4"/>
+    <child link="Link5"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-3.1070001" upper="3.1070001" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint6" type="revolute">
+    <origin xyz="0. 0. 0." rpy="3.1415927 -1.5707928 0. "/>
+    <parent link="Link5"/>
+    <child link="Link6"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-2.2339999" upper="2.2339999" effort="100." velocity="1."/>
+  </joint>
+  <joint name="joint7" type="revolute">
+    <origin xyz="0. 0. 0.1725" rpy="-1.5707964 -1.5707964 0. "/>
+    <parent link="Link6"/>
+    <child link="Link7"/>
+    <axis xyz="1. 0. 0."/>
+    <limit lower="-6.2829994" upper="6.2829994" effort="100." velocity="1."/>
+  </joint>
+  <joint name="root_joint" type="fixed">
+    <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+    <parent link="Root"/>
+    <child link="base_link"/>
+  </joint>
+  <link name="Link1">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.59356"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link1_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link1_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link1_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link2">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.43285"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link2_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link2_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link2_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link3">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.43132"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link3_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link3_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link3_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link4">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.28963"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link4_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link4_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link4_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link5">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.23941"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link5_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link5_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link5_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link6">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.21879"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link6_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link6_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. -1.5707964"/>
+      <geometry>
+        <mesh filename="meshes/Link6_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Link7">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.14433"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/Link7_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/Link7_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/Link7_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_flange_link">
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <cylinder radius="0.03" length="0.0038"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <cylinder radius="0.03" length="0.0038"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_hand_base_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.14143"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="-0. -0. 0.00207" rpy="-1.5707964 0. -0.0707906"/>
+      <geometry>
+        <mesh filename="meshes/R_hand_base_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="-0. -0. 0.00207" rpy="-1.5707964 0. -0.0707906"/>
+      <geometry>
+        <mesh filename="meshes/R_hand_base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0. -0. 0.00207" rpy="-1.5707964 0. -0.0707906"/>
+      <geometry>
+        <mesh filename="meshes/R_hand_base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_index_intermediate">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0045683"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_intermediate_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_index_proximal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0042403"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_proximal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_index_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_middle_intermediate">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0050396"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_intermediate_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_middle_proximal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0042403"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_proximal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_middle_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_pinky_intermediate">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0035996"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_intermediate_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_pinky_proximal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0042403"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_proximal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_pinky_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_ring_intermediate">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0045683"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_intermediate_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_ring_proximal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0042403"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_proximal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_ring_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_distal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0033441"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_distal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_distal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_distal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_intermediate">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0037847"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_intermediate_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_intermediate_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_proximal">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0066075"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="R_thumb_proximal_base">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.0018869"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_base_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_base_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. -1.5707963 0. "/>
+      <geometry>
+        <mesh filename="meshes/R_thumb_proximal_base_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="Root"/>
+  <link name="base_link">
+    <inertial>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <mass value="0.84105"/>
+      <inertia ixx="0." ixy="0." ixz="0." iyy="0." iyz="0." izz="0."/>
+    </inertial>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/base_link_visuals.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <visual>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0. 0. 0." rpy="0. 0. 0."/>
+      <geometry>
+        <mesh filename="meshes/base_link_collisions.obj" scale="1. 1. 1."/>
+      </geometry>
+    </collision>
+  </link>
+</robot>
